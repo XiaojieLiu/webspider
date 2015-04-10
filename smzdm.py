@@ -22,3 +22,14 @@ listtitle2 = soup.find_all("h2",class_="itemName")//get link
 
 for x,y,z in zip(listtitle,listtitle1,listtitle2):
 	print x.string,y.string,z.find("a").get("href")
+
+#another way
+listtitle = soup.find_all("li",class_="list") // get all list tag and use keyword to get title link and herf
+
+print (listtitle[1].prettify())
+
+for x in listtitle:
+	if (x.find("span",class_="red").string):
+		print x.find("span",{"class": "black"}).string +" "+ x.find("span",{"class": "red"}).string + " " 
+		      + x.find("a").get("href")
+
